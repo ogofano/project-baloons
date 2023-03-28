@@ -1,0 +1,31 @@
+.section-about
+  padding-top: 8rem
+  padding-bottom: 2.4rem
+  @include respond(tab-port)
+    margin-bottom: -24rem
+  
+.section-adventure
+  padding: 21rem 0
+  @include respond(tab-land)
+    padding: 19rem 0
+  background: linear-gradient(90deg, rgba($color-light-brown, 0.7) 0.03%, rgba($color-black, 0.7) 99.94%), url(../img/adventure-bg.jpg) center / cover no-repeat
+  clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%)
+  @include respond(tab-port)
+    padding: 11rem 0
+    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%)
+
+.section-tour
+  padding-top: 8rem
+  margin-bottom: 8.5rem
+
+.section-feedback
+  padding: 8rem 0
+  position: relative
+
+.section-book
+  padding: 8rem
+  background: linear-gradient(90deg, $color-light-brown 3.65%, $color-brown 100%)
+  @include respond(tab-port)
+    padding: 4rem
+
+

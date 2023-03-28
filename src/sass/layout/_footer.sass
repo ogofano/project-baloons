@@ -1,0 +1,32 @@
+.footer
+  background: #333
+  padding-top: 8rem
+  padding-bottom: 8rem
+  &__logo
+    width: 12rem
+    height: 100%
+  &__list > &__item
+    list-style: none
+    display: inline-block
+    &:not(:last-child)
+      margin-right: 5rem
+      @include respond(tab-land)
+        margin-right: 3rem
+  &__link
+    &:link, &:visited
+      font-weight: 300
+      color: $color-white
+      text-decoration: none
+      text-transform: uppercase
+      display: inline-block
+      transition: all .3s ease-out
+      @include respond(tab-port)
+        margin-bottom: 2.5rem
+      @include respond(phone)
+        font-size: 2rem
+        margin-bottom: 3.5rem
+    &:hover
+      transform: rotate(5deg) scale(1.2)
+      color: $color-light-brown
+    
+      

@@ -1,0 +1,105 @@
+.book
+  height: 50rem
+  width: 100%
+  padding: 5rem
+  background: linear-gradient(115deg, rgba($color-white,0.9) 0%, rgba($color-white,0.9) 55%, rgba($color-light-brown,0.1) 55%, rgba($color-brown,0.1) 100%), url(../img/bg-form.jpg) center / cover no-repeat
+  box-shadow: $box-shadow
+  border-radius: .5rem
+  overflow: hidden
+  @include respond(tab-port)
+    background: linear-gradient(115deg, rgba($color-white,0.9) 0%, rgba($color-white,0.9) 505%, rgba($color-light-brown,0.1) 55%, rgba($color-brown,0.1) 100%), url(../img/bg-form.jpg) center / cover no-repeat
+  @include respond(phone)
+    padding: 3rem
+    height: 59rem
+.form
+  @include respond(tab-port)
+    text-align: center
+    // width: 103%
+  &__group
+    position: relative
+    margin-bottom: 5rem
+    &-radio
+      display: block
+      margin-bottom: 3.4rem
+      
+  &__input
+    letter-spacing: .2rem
+    color: $color-black
+    padding: 1.8rem 2.2rem
+    width: 30%
+    background-color: $color-white
+    border: none
+    border-bottom: .2rem solid transparent
+    border-radius: .3rem .3rem 0 0
+    @include respond(tab-land)
+      width: 45%
+    @include respond(tab-port)
+      width: 85%
+      box-shadow: $box-shadow
+    @include respond(phone)
+      width: 100%
+    &:focus // Срабатывает при нажатии на input поле
+      outline: none
+      border-bottom: .2rem solid #66D763
+      box-shadow: $box-shadow
+    &:focus:invalid // При неверном содержимом
+      border-bottom: .2rem solid #D76363
+    &-radio
+      opacity: 0
+      cursor: pointer
+      margin-right: .5rem
+      &:first-child
+        margin-left: .5rem
+      &:last-of-type
+        margin-left: 2.4rem
+        @include respond(tab-land)
+          display: block
+        
+  
+  &__input:placeholder-shown + &__label
+    // Если placeholder видно, то селектор первого соседа имеет св-ва:
+    opacity: 0
+    visibility: hidden
+    transform: translateY(-3rem)
+
+  &__label
+    position: absolute
+    top: 6.5rem
+    left: 1.5rem
+    transition: all .2s
+    @include respond(tab-land)
+      width: 45%
+    @include respond(tab-port)
+      width: 85%
+    @include respond(phone)
+      width: 100%
+      font-size: 2.4rem
+      top: 8.5rem
+      left: 0
+    &-radio
+      cursor: pointer
+      position: relative
+      @include respond(phone)
+        font-size: 2rem
+      &:last-child
+        @include respond(tab-land)
+          margin-left: 28px
+
+  
+.radio-button
+  display: inline-block
+  width: 1.4rem
+  height: 1.4rem
+  border-radius: 100%
+  background-color: rgba($color-light-brown, 0)
+  outline: .4rem solid $color-light-brown
+  outline-offset: .2rem
+  position: absolute
+  top: .3rem
+  left: -2.5rem
+  
+.form__input-radio:checked + .form__label-radio > .radio-button
+  background-color: $color-light-brown
+
+
+    

@@ -1,0 +1,96 @@
+body
+  font-family: 'Roboto', sans-serif
+  font-weight: 400
+  color: $color-grey
+  font-size: 1.6rem
+  letter-spacing: .2rem
+  
+.title-first
+  color: $color-white
+  &__main
+    display: block
+    font-weight: 800
+    font-size: 5rem
+    line-height: 6rem
+    letter-spacing: 1rem
+    text-transform: uppercase
+    margin-bottom: 1rem
+    animation-name: leftToRight
+    animation-duration: 1.7s
+    animation-delay: 1s
+    animation-timing-function: ease
+    backface-visibility: hidden // Фикс анимации, следует использовать
+    @include respond(tab-land)
+      font-size: 4rem
+    @include respond(tab-port)
+      font-size: 3.6rem
+      letter-spacing: .5rem
+      margin-bottom: 0
+    @include respond(phone)
+      font-size: 4.2rem
+  &__secondary
+    display: block
+    font-weight: 100
+    font-size: 4rem
+    line-height: 4.8rem
+    letter-spacing: .5rem
+    margin-bottom: 5rem
+    animation-name: rightToLeft
+    animation-duration: 1.7s
+    animation-delay: 1s
+    animation-timing-function: ease
+    backface-visibility: hidden
+    @include respond(tab-land)
+      font-size: 3.5rem
+      margin-bottom: 3.5rem
+    @include respond(tab-port)
+      font-size: 3.2rem
+      letter-spacing: .2rem
+    @include respond(phone)
+      font-size: 3.7rem
+
+.title-secondary
+  text-align: center // Т.к. это блочный элемент, и он занимает всю ширину
+  display: inline-block
+  font-size: 3.6rem
+  letter-spacing: 1rem
+  text-transform: uppercase
+  font-weight: 800
+  background: linear-gradient(90deg, rgba($color-light-brown, 0.7) 0.03%, rgba($color-brown, 0.7) 99.94%)
+  -webkit-background-clip: text
+  color: transparent // Прозрачный текст
+  transition: all .4s ease
+  backface-visibility: hidden // Фикс дергания тени
+  @include respond(tab-land)
+    font-size: 2.8rem
+    letter-spacing: .8rem
+  @include respond(tab-port)
+    letter-spacing: .6rem
+  @include respond(phone)
+    font-size: 3.3rem
+    
+  &_hover
+    &:hover
+      transform: skewY(2deg) skewX(15deg) scale(1.1)
+      text-shadow: 0 .4rem .4rem rgba($color-black, .25) // X Y BLur Color
+  &_white
+    color: $color-white
+
+.title-third
+  font-size: 2rem
+  letter-spacing: .2rem
+  text-transform: uppercase
+  font-weight: 700
+  @include respond(tab-land)
+    font-size: 1.8rem
+  @include respond(phone)
+    font-size: 2.4rem
+
+.paragraph
+  font-size: 1.6rem
+  letter-spacing: .2rem
+  line-height: 140%
+  @include respond(tab-land)
+    font-size: 1.4rem
+  @include respond(phone)
+    font-size: 2rem

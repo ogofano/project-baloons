@@ -1,0 +1,26 @@
+.header
+  position: relative 
+  height: 	95vh // 95 view high (относительная высота)
+  background: linear-gradient(90deg, rgba($color-light-brown, 0.7) 0.03%, rgba($color-black, 0.7) 99.94%), url(../img/header.jpg) center / cover no-repeat
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%) // Клипаем по точкам относительно левого верхнего угла
+  @include respond(tab-port)
+    clip-path: polygon(0 0, 100% 0 , 100% 100%, 0 95%)
+  &__logo
+    position: absolute
+    left: 5rem
+    top: 5rem
+    height: 7rem
+    width: 5.6rem
+  &__box
+    position: absolute
+    top: 40%
+    left: 50%
+    // Фишка расположения по центру
+    transform: translate(-50%, -50%)
+    // чтобы текст был во всю ширину
+    width: 100%
+    text-align: center
+    @include respond(tab-land)
+      top: 50%
+    @include respond(phone)
+      top: 45%

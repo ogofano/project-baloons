@@ -1,0 +1,42 @@
+.composition
+  position: relative
+  @include respond(tab-port)
+    text-align: center
+  &__photo
+    width: 55%
+    border-radius: .5rem
+    box-shadow: $box-shadow
+    position: absolute
+    @include respond(tab-port)
+      position: relative
+    transition: all .3s ease
+    z-index: 0
+    outline-offset: 1rem // Отступ outline от элемента
+    &_n1
+      top: 0
+      left: 0
+      @include respond(tab-port)
+        left: -11rem
+    &_n2
+      top: 9rem
+      left: 22rem
+      @include respond(tab-land)
+        top: 7rem
+        left: 18rem
+      @include respond(tab-port)
+        top: -12rem
+        left: 11rem
+    &_n3
+      left: 2rem
+      top: 16rem
+      @include respond(tab-land)
+        top: 12rem
+      @include respond(tab-port)
+        top: -26rem
+        left: -9rem
+    &:hover
+      outline: 1rem solid $color-light-brown // Аналог border
+      transform: scale(1.1)
+      z-index: 1
+  &:hover &__photo:not(:hover)
+    transform: scale(.9)
